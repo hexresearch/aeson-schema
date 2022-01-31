@@ -14,9 +14,7 @@ build-type:          Simple
 cabal-version:       >= 1.8
 tested-with:         GHC==7.10.3, GHC==8.0.1, GHC==8.2.2, GHC==8.6.5, GHC==8.8.1
 extra-source-files:  CHANGELOG.md
-data-files:          test/test-suite/tests/draft3/optional/*.json,
-                     test/test-suite/tests/draft3/*.json
-                     examples/schema.json
+data-files:          examples/schema.json
 
 source-repository head
   type:                git
@@ -54,40 +52,3 @@ library
                        transformers >= 0.3.0.0 && < 0.6,
                        unordered-containers >= 0.2.5.1 && < 2.11,
                        vector >= 0.10 && < 0.13
-
-test-suite tests
-  ghc-options:         -Wall
-  hs-source-dirs:      test
-  type:                exitcode-stdio-1.0
-  main-is:             TestSuite.hs
-  other-modules:       TestSuite.Types,
-                       Data.Aeson.LitQQ,
-                       Data.Aeson.Schema.Examples,
-                       Data.Aeson.Schema.Choice.Tests,
-                       Data.Aeson.Schema.CodeGen.Tests,
-                       Data.Aeson.Schema.Types.Tests,
-                       Data.Aeson.Schema.Validator.Tests
-  extensions:          OverloadedStrings
-  build-depends:       base,
-                       aeson,
-                       text,
-                       vector,
-                       containers,
-                       hashable,
-                       unordered-containers,
-                       aeson-schema,
-                       attoparsec,
-                       scientific,
-                       template-haskell,
-                       test-framework,
-                       test-framework-hunit,
-                       HUnit,
-                       test-framework-quickcheck2,
-                       QuickCheck,
-                       bytestring,
-                       hint,
-                       temporary,
-                       mtl,
-                       filepath,
-                       directory,
-                       regex-compat
